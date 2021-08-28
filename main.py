@@ -33,8 +33,8 @@ while is_game_running:
             list_of_guessed_states.append(guess_input.lower())
             turtle.penup()
             turtle.hideturtle()
-            coords = data[data.state == guess_input.lower()].to_numpy()
-            turtle.goto(coords[0][1] - 10, coords[0][2])
+            coords = data[data.state == guess_input.lower()]
+            turtle.goto(int(coords.x) - 10, int(coords.y))
             turtle.write(
                 arg=f"{guess_input.capitalize()}", font=("Courier", 8, "normal")
             )
